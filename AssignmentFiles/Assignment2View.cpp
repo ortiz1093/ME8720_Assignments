@@ -80,18 +80,11 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	
 	myPoint A(100, 100);
 	myPoint C(600, 600);
-	myPoint D(100, 600);
-	myPoint B(600, 100);
-	myRectangle rectA(A,C);
+	myRectangle rectA(A, C);
 	rectA.draw(pDC);
 
-	myMatrix S;
-	S.makeScaleMat(0.5);
-	A.show(pDC);
-	myPoint E;
-	E = S * A;
-	E.show(pDC);
-
+	rectA.scale(0.5);
+	rectA.draw(pDC);
 }
 ///////////////////////////////////////////////////////////////////////////////////
 

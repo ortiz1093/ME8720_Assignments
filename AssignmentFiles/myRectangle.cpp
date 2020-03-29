@@ -26,7 +26,7 @@ void myRectangle::calcCentroid() {
 	centroid = myPoint(centX, centY);
 }
 
-void myRectangle::scale(int factor) {
+void myRectangle::scale(double factor) {
 	myMatrix S;
 	S.makeScaleMat(factor);
 	ptA = S * ptA;

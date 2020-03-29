@@ -13,13 +13,19 @@ myPoint::myPoint(float x, float y) : myVector::myVector() {
 	this->z = 1;
 }
 
-myPoint myPoint::operator = (const myPoint& p) {
-	myPoint newPt;
-	newPt.x = p.x;
-	newPt.y = p.y;
-
-	return newPt;
+void myPoint::operator = (const myPoint& p) {
+	
+	x = p.x;
+	y = p.y;
 }
+
+//myPoint myPoint::operator = (const myPoint& p) {
+//	myPoint newPt;
+//	newPt.x = p.x;
+//	newPt.y = p.y;
+//
+//	return newPt;
+//}
 
 //void myPoint::translate(float x, float y) {
 //	myPoint result;

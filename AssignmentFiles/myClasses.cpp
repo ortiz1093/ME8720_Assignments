@@ -524,7 +524,3 @@ void myMatrix::display() {
 	cout << "[" << a21 << " " << a22 << " " << a23 << "]" << endl;
 	cout << "[" << a31 << " " << a32 << " " << a33 << "]" << endl;
 }
-
-
-
-
