@@ -1,6 +1,8 @@
 #include "pch.h"
 #include "myRectangle.h"
 
+constexpr double Pi = 3.14159265;
+
 myRectangle::myRectangle() 
 	: ptA(myPoint(100,100)), ptB(myPoint(200, 100)), ptC(myPoint(200, 200)), ptD(myPoint(100, 200)) {
 	
@@ -34,10 +36,37 @@ void myRectangle::scale(double factor) {
 	ptC = S * ptC;
 	ptD = S * ptD;
 }
-//
-//void myRectangle::rotate(double angle, int units) {}
-//
-//void myRectangle::translate(const myVector& u) {}
+
+void myRectangle::rotate(double angle, int units) {
+
+	if (units == 1) {
+		;
+	}
+	else if (units == 2) {
+		// Convert input angle from degrees to radians
+		angle = angle * Pi / 180;
+	}
+	else {
+		cout << "Invalid choice for units. Assuming input in radians." << endl;
+	}
+
+	myMatrix R;
+	R.makeRotationMat(angle);
+	ptA = R * ptA;
+	ptB = R * ptB;
+	ptC = R * ptC;
+	ptD = R * ptD;
+}
+
+void myRectangle::translate(const myVector& u) {
+	myMatrix T;
+	T.makeTranslationMat(u.x, u.y);
+
+	ptA = T * ptA;
+	ptB = T * ptB;
+	ptC = T * ptC;
+	ptD = T * ptD;
+}
 
 void myRectangle::draw(CDC* pDC) {
 	pDC->MoveTo(ptA.getX(), ptA.getY());

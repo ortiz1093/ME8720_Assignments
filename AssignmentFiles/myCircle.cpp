@@ -15,6 +15,16 @@ void myCircle::translate(const myVector& u) {
 	center.translate(u);
 }
 
+void myCircle::scale(double factor) {
+
+	myMatrix S;
+	S.makeScaleMat(factor);
+	center = S * center;
+
+	radius = radius * factor;
+	
+}
+
 void myCircle::draw(CDC* pDC) {
 	myVector pointVec(radius, 0,0);
 

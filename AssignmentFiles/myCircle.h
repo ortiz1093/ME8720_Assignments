@@ -13,6 +13,7 @@ public:
 	myCircle(float X, float Y, double r);
 	myPoint getCenter();
 	void translate(const myVector& u);
+	void scale(double factor);
 	void draw(CDC* pDC);
 };
 

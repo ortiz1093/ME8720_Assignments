@@ -12,6 +12,7 @@ class myVector {
 	friend class myMatrix;
 	friend class myPoint;
 	friend class myCircle;
+	friend class myRectangle;
 protected:
 	double x, y, z;
 public:
@@ -31,6 +32,7 @@ public:
 	myVector scale2D(double a);
 	void display();
 	void draw(double tailX, double tailY, CDC* pDC);
+	void draw(CDC* pDC);
 };
 
 

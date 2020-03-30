@@ -250,6 +250,11 @@ void myVector::draw(double tailX, double tailY, CDC* pDC) {
 	pDC->LineTo(tailX + x, tailY + y);
 }
 
+void myVector::draw(CDC* pDC) {
+	pDC->MoveTo(0, 0);
+	pDC->LineTo(x, y);
+}
+
 
 
 ////////////////////////////////////////////////////////////////////////////////
