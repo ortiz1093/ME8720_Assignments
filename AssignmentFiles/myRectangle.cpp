@@ -35,6 +35,8 @@ void myRectangle::scale(double factor) {
 	ptB = S * ptB;
 	ptC = S * ptC;
 	ptD = S * ptD;
+
+	this->calcCentroid();
 }
 
 void myRectangle::rotate(double angle, int units) {
@@ -56,6 +58,8 @@ void myRectangle::rotate(double angle, int units) {
 	ptB = R * ptB;
 	ptC = R * ptC;
 	ptD = R * ptD;
+
+	this->calcCentroid();
 }
 
 void myRectangle::translate(const myVector& u) {
@@ -66,6 +70,8 @@ void myRectangle::translate(const myVector& u) {
 	ptB = T * ptB;
 	ptC = T * ptC;
 	ptD = T * ptD;
+
+	this->calcCentroid();
 }
 
 void myRectangle::draw(CDC* pDC) {

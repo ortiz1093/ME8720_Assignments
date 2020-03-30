@@ -79,8 +79,17 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	// TODO: add draw code for native data here
 	// Drawing area ~1500 x ~840 when window maximized, toolbars open
 	
-	myTriangle triA;
+	myPoint A(900, 100);
+	myPoint B(850, 200);
+	myPoint C(1000, 100);
+	myTriangle triA(A,B,C);
 	triA.draw(pDC);
+	triA.centroid.show(pDC);
+
+	myPoint u(-300, 300);
+	triA.translate(u);
+	triA.draw(pDC);
+	triA.centroid.show(pDC);
 
 }
 ///////////////////////////////////////////////////////////////////////////////////
