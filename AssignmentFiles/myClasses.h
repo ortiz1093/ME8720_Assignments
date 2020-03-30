@@ -13,6 +13,7 @@ class myVector {
 	friend class myPoint;
 	friend class myCircle;
 	friend class myRectangle;
+	friend class myTriangle;
 protected:
 	double x, y, z;
 public:

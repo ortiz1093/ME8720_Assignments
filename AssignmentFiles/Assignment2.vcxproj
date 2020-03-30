@@ -194,6 +194,7 @@
     <ClInclude Include="MainFrm.h" />
     <ClInclude Include="myClasses.h" />
     <ClInclude Include="myRectangle.h" />
+    <ClInclude Include="myTriangle.h" />
     <ClInclude Include="OutputWnd.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PropertiesWnd.h" />
@@ -223,6 +224,7 @@
     <ClCompile Include="myCircle.cpp" />
     <ClCompile Include="myClasses.cpp" />
     <ClCompile Include="myRectangle.cpp" />
+    <ClCompile Include="myTriangle.cpp" />
     <ClCompile Include="OutputWnd.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
     </ClCompile>

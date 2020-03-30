@@ -20,6 +20,7 @@
 #include "myPoint.h"
 #include "myCircle.h"
 #include "myRectangle.h"
+#include "myTriangle.h"
 #include<iostream>
 #include<string>
 //////////////////////////////////////////////////////////////////
@@ -78,19 +79,8 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	// TODO: add draw code for native data here
 	// Drawing area ~1500 x ~840 when window maximized, toolbars open
 	
-	myPoint A(500, 500);
-	myPoint C(600, 600);
-	myRectangle rectA(A, C);
-	rectA.draw(pDC);
-	
-	myVector v(75, -50);
-	rectA.translate(v);
-	rectA.draw(pDC);
-
-	v.draw(500,500,pDC);
-	v.draw(600, 500, pDC);
-	v.draw(600, 600, pDC);
-	v.draw(500, 600, pDC);
+	myTriangle triA;
+	triA.draw(pDC);
 
 }
 ///////////////////////////////////////////////////////////////////////////////////

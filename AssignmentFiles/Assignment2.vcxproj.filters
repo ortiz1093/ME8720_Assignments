@@ -78,6 +78,9 @@
     <ClInclude Include="myRectangle.h">
       <Filter>Header Files\User Defined</Filter>
     </ClInclude>
+    <ClInclude Include="myTriangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Assignment2View.cpp">
@@ -121,6 +124,9 @@
     </ClCompile>
     <ClCompile Include="myRectangle.cpp">
       <Filter>Source Files\User Defined</Filter>
+    </ClCompile>
+    <ClCompile Include="myTriangle.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
