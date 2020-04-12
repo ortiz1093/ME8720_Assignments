@@ -1,8 +1,9 @@
 #pragma once
+#include "myShape.h"
 #include "myPoint.h"
 
 
-class myRectangle
+class myRectangle : public myShape
 {
 public:
 	myPoint ptA, ptB, ptC, ptD,centroid;

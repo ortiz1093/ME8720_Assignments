@@ -21,6 +21,8 @@
 #include "myCircle.h"
 #include "myRectangle.h"
 #include "myTriangle.h"
+#include "myShape.h"
+#include "myPattern.h"
 #include<iostream>
 #include<string>
 //////////////////////////////////////////////////////////////////
@@ -82,15 +84,23 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	myPoint A(900, 100);
 	myPoint B(850, 200);
 	myPoint C(1000, 100);
-	myTriangle triA(A,B,C);
-	triA.draw(pDC);
+	/*myTriangle triA(A,B,C);
+
+	myCircle circA(200,200,10);
+	myRectangle rectA(myPoint(300, 300), myPoint(600, 600));*/
+	/*triA.draw(pDC);
 	triA.centroid.show(pDC);
 
 	myPoint u(-300, 300);
 	triA.translate(u);
 	triA.draw(pDC);
-	triA.centroid.show(pDC);
+	triA.centroid.show(pDC);*/
 
+	myPattern pattA("pattA");
+	pattA.addShape(new myTriangle(A, B, C));
+	pattA.addShape(new myCircle(200, 200, 10));
+	pattA.addShape(new myRectangle(myPoint(300, 300), myPoint(600, 600)));
+	pattA.draw(pDC);
 }
 ///////////////////////////////////////////////////////////////////////////////////
 

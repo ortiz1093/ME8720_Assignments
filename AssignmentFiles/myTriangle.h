@@ -1,8 +1,9 @@
 #pragma once
+#include "myShape.h"
 #include "myPoint.h"
 
 
-class myTriangle
+class myTriangle : public myShape
 {
 public:
 	myPoint ptA, ptB, ptC, centroid;
@@ -15,4 +16,3 @@ public:
 	void translate(const myVector& u);
 	void draw(CDC* pDC);
 };
-

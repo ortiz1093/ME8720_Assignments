@@ -1,8 +1,9 @@
 #pragma once
+#include "myShape.h"
 #include "myPoint.h"
 
 
-class myCircle
+class myCircle : public myShape
 {
 private:
 	myPoint center;

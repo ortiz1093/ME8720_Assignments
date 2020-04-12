@@ -79,6 +79,12 @@
       <Filter>Header Files\User Defined</Filter>
     </ClInclude>
     <ClInclude Include="myTriangle.h">
+      <Filter>Header Files\User Defined</Filter>
+    </ClInclude>
+    <ClInclude Include="myPattern.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="myShape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -126,7 +132,13 @@
       <Filter>Source Files\User Defined</Filter>
     </ClCompile>
     <ClCompile Include="myTriangle.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\User Defined</Filter>
+    </ClCompile>
+    <ClCompile Include="myPattern.cpp">
+      <Filter>Source Files\User Defined</Filter>
+    </ClCompile>
+    <ClCompile Include="myShape.cpp">
+      <Filter>Source Files\User Defined</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
