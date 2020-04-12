@@ -81,25 +81,17 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	// TODO: add draw code for native data here
 	// Drawing area ~1500 x ~840 when window maximized, toolbars open
 	
-	myPoint A(900, 100);
-	myPoint B(850, 200);
-	myPoint C(1000, 100);
-	/*myTriangle triA(A,B,C);
-
-	myCircle circA(200,200,10);
-	myRectangle rectA(myPoint(300, 300), myPoint(600, 600));*/
-	/*triA.draw(pDC);
-	triA.centroid.show(pDC);
-
-	myPoint u(-300, 300);
-	triA.translate(u);
-	triA.draw(pDC);
-	triA.centroid.show(pDC);*/
-
+	
 	myPattern pattA("pattA");
-	pattA.addShape(new myTriangle(A, B, C));
-	pattA.addShape(new myCircle(200, 200, 10));
-	pattA.addShape(new myRectangle(myPoint(300, 300), myPoint(600, 600)));
+	pattA.addShape(new myTriangle(myPoint(350, 250), myPoint(300, 300), myPoint(400, 300)));
+	pattA.addShape(new myCircle(350, 350, 50));
+	pattA.addShape(new myRectangle(myPoint(300, 300), myPoint(400, 400)));
+	pattA.draw(pDC);
+	pattA.rotate(-30,2);
+	pattA.draw(pDC);
+	pattA.translate(myVector(50, 50));
+	pattA.draw(pDC);
+	pattA.scale(2);
 	pattA.draw(pDC);
 }
 ///////////////////////////////////////////////////////////////////////////////////

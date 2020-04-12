@@ -30,3 +30,30 @@ void myPattern::draw(CDC* pDC) {
 
 	cursor = head;
 };
+
+void myPattern::scale(double factor) {
+	while (cursor) {
+		cursor->scale(factor);
+		cursor = cursor->nextShape;
+	}
+
+	cursor = head;
+};
+
+void myPattern::translate(const myVector& u) {
+	while (cursor) {
+		cursor->translate(u);
+		cursor = cursor->nextShape;
+	}
+
+	cursor = head;
+};
+
+void myPattern::rotate(double angle, int units) {
+	while (cursor) {
+		cursor->rotate(angle,units);
+		cursor = cursor->nextShape;
+	}
+
+	cursor = head;
+};
