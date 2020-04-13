@@ -5,19 +5,22 @@ constexpr double Pi = 3.14159265;
 
 myRectangle::myRectangle() 
 	: ptA(myPoint(100,100)), ptB(myPoint(200, 100)), ptC(myPoint(200, 200)), ptD(myPoint(100, 200)) {
-	
+
+	this->label = "Rectangle";
 	this->calcCentroid();
 }
 
 myRectangle::myRectangle(myPoint UL, myPoint UR, myPoint LR, myPoint LL)
 	: ptA(UL), ptB(UR), ptC(LR), ptD(LL) {
 
+	this->label = "Rectangle";
 	this->calcCentroid();
 }
 
 myRectangle::myRectangle(const myPoint& upperLeft, const myPoint& lowerRight) 
 	: ptA(upperLeft), ptC(lowerRight), ptB(myPoint(lowerRight.x, upperLeft.y)), ptD(myPoint(upperLeft.x, lowerRight.y)) {
 
+	this->label = "Rectangle";
 	this->calcCentroid();
 }
 

@@ -5,14 +5,20 @@ constexpr double Pi = 3.14159265;
 
 myCircle::myCircle() : radius(10) {
 	centroid = myPoint(100, 100);
+
+	this->label = "Circle";
 }
 
 myCircle::myCircle(myPoint C, double r) : radius(r) {
 	centroid = C;
+
+	this->label = "Circle";
 }
 
 myCircle::myCircle(float X, float Y, double r) : radius(r) {
 	centroid = myPoint(X, Y);
+
+	this->label = "Circle";
 }
 
 myPoint myCircle::getCenter() {

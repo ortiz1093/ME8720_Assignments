@@ -22,6 +22,7 @@ public:
 	void calcCentroid();
 	void showCentroid(CDC* pDC);
 	void draw(CDC* pDC);
+	void addLabels(CDC* pDC);
 	void scale(double factor);
 	void translate(const myVector& u);
 	void rotate(double angle, int units);

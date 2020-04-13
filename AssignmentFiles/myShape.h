@@ -17,6 +17,7 @@ public:
 	myShape();
 	~myShape();
 	myPoint* getCentroid();
+	void showLabel(CDC* pDC);
 	virtual void draw(CDC* pDC)=0;
 	virtual void scale(double factor) = 0;
 	virtual void rotate(double angle, int units) = 0;

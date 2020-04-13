@@ -19,12 +19,14 @@ myTriangle::myTriangle(){
 	ptB = myPoint(leftX, baseY);
 	ptC = myPoint(rightX, baseY);
 
+	this->label = "Triangle";
 	this->calcCentroid();
 }
 
 myTriangle::myTriangle(myPoint Top, myPoint LL, myPoint LR)
 	: ptA(Top), ptB(LL), ptC(LR){
 
+	this->label = "Triangle";
 	this->calcCentroid();
 }
 

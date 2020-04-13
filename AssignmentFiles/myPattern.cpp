@@ -124,6 +124,15 @@ void myPattern::draw(CDC* pDC) {
 	cursor = head;
 };
 
+void myPattern::addLabels(CDC* pDC) {
+	while (cursor) {
+		cursor->showLabel(pDC);
+		cursor = cursor->nextShape;
+	}
+
+	cursor = head;
+}
+
 void myPattern::scale(double factor) {
 	while (cursor) {
 		cursor->scale(factor);

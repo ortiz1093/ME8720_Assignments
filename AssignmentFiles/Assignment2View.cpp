@@ -82,18 +82,11 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	// Drawing area ~1500 x ~840 when window maximized, toolbars open
 	
 	
-	myPattern pattA("pattA");
-	pattA.addShape(new myTriangle(myPoint(100, 250), myPoint(50, 300), myPoint(150, 300)),"Roof");
+	myPattern pattA("Pattern A");
+	pattA.addShape(new myTriangle(myPoint(100, 100), myPoint(50, 200), myPoint(150, 200)), "Triangle A");
+	pattA.addShape(new myRectangle(myPoint(50, 200), myPoint(150, 300)),"Rectangle A");
+	pattA.addLabels(pDC);
 	pattA.draw(pDC);
-	pattA.showCentroid(pDC);
-	pattA.addShape(new myRectangle(myPoint(50, 300), myPoint(150,400)), "Walls");
-	pattA.translate(myVector(300,0));
-	pattA.draw(pDC);
-	pattA.showCentroid(pDC);
-	pattA.addShape(new myCircle(400, 350, 50), "Occupant");
-	pattA.translate(myVector(300, 0)); 
-	pattA.draw(pDC);
-	pattA.showCentroid(pDC);
 
 }
 ///////////////////////////////////////////////////////////////////////////////////
