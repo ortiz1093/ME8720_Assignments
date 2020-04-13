@@ -4,6 +4,8 @@
 myShape::myShape() {
 	nextShape = nullptr;
 	prevShape = nullptr;
+	string label = "";
+	centroid = myPoint(0,0);
 }
 
 myShape::~myShape() {}

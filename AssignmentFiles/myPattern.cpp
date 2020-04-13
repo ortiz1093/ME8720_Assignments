@@ -59,8 +59,28 @@ void myPattern::deleteShape(string label) {
 	cursor = head;
 }
 
-void myPattern::getShape(string label) {
+myShape* myPattern::getShape(string label) {
+	
+	myShape* found = nullptr;
+	
+	bool flag = TRUE;
+	while (flag) {
+		string shapeLabel = cursor->label;
 
+		if (shapeLabel.compare(label) == 0) {
+			found = cursor;
+			flag = FALSE;
+		}
+		else if (shapeLabel.compare(tail->label) == 0) {
+			flag = FALSE;
+		}
+		else {
+			cursor = cursor->nextShape;
+		}
+	}
+
+	cursor = head;
+	return found;
 }
 
 void myPattern::draw(CDC* pDC) {
