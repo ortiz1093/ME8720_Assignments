@@ -48,12 +48,19 @@ void myPattern::deleteShape(string label) {
 
 			flag = FALSE;
 		}
+		else if (shapeLabel.compare(tail->label) == 0) {
+			flag = FALSE;
+		}
 		else {
 			cursor = cursor->nextShape;
 		}
 	}
 
 	cursor = head;
+}
+
+void myPattern::getShape(string label) {
+
 }
 
 void myPattern::draw(CDC* pDC) {

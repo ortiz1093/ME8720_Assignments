@@ -19,45 +19,12 @@ void myPoint::operator = (const myPoint& p) {
 	y = p.y;
 }
 
-//myPoint myPoint::operator = (const myPoint& p) {
-//	myPoint newPt;
-//	newPt.x = p.x;
-//	newPt.y = p.y;
-//
-//	return newPt;
-//}
-
-//void myPoint::translate(float x, float y) {
-//	myPoint result;
-//	myMatrix T;
-//	T.makeTranslationMat(x, y);
-//
-//	*this = T * *this;
-//}
-
 void myPoint::translate(float X, float Y) {
 	myPoint result;
 
 	x = x + X;
 	y = y + Y;
 }
-
-//myPoint myPoint::translate(const myVector& u) {
-//	myMatrix T;
-//	myPoint result;
-//	cout << "\nthis = ";
-//	this->display();
-//
-//	T.makeTranslationMat(u.x, u.y);
-//	cout << "\nT = ";
-//	T.display();
-//
-//	result = T * *this;
-//	cout << "\ntranslate result = "; 
-//	result.display();
-//
-//	return result;
-//}
 
 void myPoint::translate(const myVector& u) {
 	myPoint result;

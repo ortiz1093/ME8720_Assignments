@@ -6,7 +6,8 @@
 class myTriangle : public myShape
 {
 public:
-	myPoint ptA, ptB, ptC, centroid;
+	//myPoint ptA, ptB, ptC, centroid;
+	myPoint ptA, ptB, ptC;
 	void calcCentroid();
 public:
 	myTriangle();

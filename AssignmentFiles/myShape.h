@@ -12,10 +12,10 @@ protected:
 	myShape* nextShape;
 	myShape* prevShape;
 	string label = "";
+	myPoint centroid;
 public:
 	myShape();
 	~myShape();
-	myPoint centroid;
 	virtual void draw(CDC* pDC)=0;
 	virtual void scale(double factor) = 0;
 	virtual void rotate(double angle, int units) = 0;

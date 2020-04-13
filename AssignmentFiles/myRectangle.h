@@ -6,7 +6,7 @@
 class myRectangle : public myShape
 {
 public:
-	myPoint ptA, ptB, ptC, ptD,centroid;
+	myPoint ptA, ptB, ptC, ptD;
 	void calcCentroid();
 public:
 	myRectangle();

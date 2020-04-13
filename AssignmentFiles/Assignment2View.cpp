@@ -91,7 +91,7 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	pattA.draw(pDC);
 	pattA.translate(myVector(50, 50));
 	pattA.draw(pDC);
-	pattA.deleteShape("Occupant");
+	pattA.deleteShape("Stuff");
 	pattA.scale(2);
 	pattA.draw(pDC);
 }

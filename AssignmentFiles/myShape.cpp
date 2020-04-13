@@ -6,7 +6,4 @@ myShape::myShape() {
 	prevShape = nullptr;
 }
 
-myShape::~myShape() {
-	/*delete nextShape;
-	delete prevShape;*/
-}
+myShape::~myShape() {}

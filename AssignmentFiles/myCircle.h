@@ -6,7 +6,7 @@
 class myCircle : public myShape
 {
 private:
-	myPoint center;
+	//myPoint center;
 	double radius;
 public:
 	myCircle();

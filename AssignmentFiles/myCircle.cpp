@@ -3,18 +3,24 @@
 
 constexpr double Pi = 3.14159265;
 
-myCircle::myCircle() : center(myPoint(100, 100)), radius(10) {}
+myCircle::myCircle() : radius(10) {
+	centroid = myPoint(100, 100);
+}
 
-myCircle::myCircle(myPoint C, double r) : center(C), radius(r) {}
+myCircle::myCircle(myPoint C, double r) : radius(r) {
+	centroid = C;
+}
 
-myCircle::myCircle(float X, float Y, double r) : center(myPoint(X, Y)), radius(r) {}
+myCircle::myCircle(float X, float Y, double r) : radius(r) {
+	centroid = myPoint(X, Y);
+}
 
 myPoint myCircle::getCenter() {
-	return center;
+	return centroid;
 }
 
 void myCircle::translate(const myVector& u) {
-	center.translate(u);
+	centroid.translate(u);
 }
 
 void myCircle::rotate(double angle, int units) {
@@ -32,14 +38,14 @@ void myCircle::rotate(double angle, int units) {
 
 	myMatrix R;
 	R.makeRotationMat(angle);
-	center = R * center;
+	centroid = R * centroid;
 }
 
 void myCircle::scale(double factor) {
 
 	myMatrix S;
 	S.makeScaleMat(factor);
-	center = S * center;
+	centroid = S * centroid;
 
 	radius = radius * factor;
 	
@@ -48,12 +54,12 @@ void myCircle::scale(double factor) {
 void myCircle::draw(CDC* pDC) {
 	myVector pointVec(radius, 0,0);
 
-	pDC->MoveTo(center.x + pointVec.x, center.y + pointVec.y);
+	pDC->MoveTo(centroid.x + pointVec.x, centroid.y + pointVec.y);
 	int n = 36;
 
 	for (int i = 1; i < n+1; i++) {
 		pointVec = pointVec.rotate2D(360 / n, 2);
-		pDC->LineTo(center.x + pointVec.x, center.y + pointVec.y);
+		pDC->LineTo(centroid.x + pointVec.x, centroid.y + pointVec.y);
 	}
 }
 
