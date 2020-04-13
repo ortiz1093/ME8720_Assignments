@@ -21,7 +21,10 @@ void myPattern::addShape(myShape* newShape, string label) {
 		tail = newShape;
 	}
 
+	numShapes++;
 	newShape->label = label;
+	this->calcCentroid();
+	
 };
 
 void myPattern::deleteShape(string label) {
@@ -56,6 +59,8 @@ void myPattern::deleteShape(string label) {
 		}
 	}
 
+	numShapes--;
+	this->calcCentroid();
 	cursor = head;
 }
 
@@ -83,6 +88,33 @@ myShape* myPattern::getShape(string label) {
 	return found;
 }
 
+void myPattern::calcCentroid() {
+	cursor = head;
+
+	double xSum = 0;
+	double ySum = 0;
+	
+	bool flag = TRUE;
+	
+	while (cursor) {
+		xSum += cursor->getCentroid()->getX();
+		ySum += cursor->getCentroid()->getY();
+
+		cursor = cursor->nextShape;
+	}
+
+	double centX = xSum / numShapes;
+	double centY = ySum / numShapes;
+	centroid = myPoint(centX, centY);
+
+	cursor = head;
+}
+
+void myPattern::showCentroid(CDC* pDC) {
+	centroid.show(pDC);
+	int x;
+}
+
 void myPattern::draw(CDC* pDC) {
 	while (cursor) {
 		cursor->draw(pDC);
@@ -99,6 +131,7 @@ void myPattern::scale(double factor) {
 	}
 
 	cursor = head;
+	this->calcCentroid();
 };
 
 void myPattern::translate(const myVector& u) {
@@ -108,6 +141,7 @@ void myPattern::translate(const myVector& u) {
 	}
 
 	cursor = head;
+	this->calcCentroid();
 };
 
 void myPattern::rotate(double angle, int units) {
@@ -117,4 +151,5 @@ void myPattern::rotate(double angle, int units) {
 	}
 
 	cursor = head;
+	this->calcCentroid();
 };
