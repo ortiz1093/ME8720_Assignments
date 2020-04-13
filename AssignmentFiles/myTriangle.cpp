@@ -12,6 +12,7 @@ myTriangle::myTriangle(){
 	ptA = myPoint(apexX, apexY);
 
 	double leftX = apexX - side_length / 2;
+
 	double rightX = apexX + side_length / 2;
 	double baseY = apexY + sqrt(pow(side_length, 2) - pow(side_length / 2, 2));
 

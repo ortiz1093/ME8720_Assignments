@@ -83,14 +83,15 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	
 	
 	myPattern pattA("pattA");
-	pattA.addShape(new myTriangle(myPoint(350, 250), myPoint(300, 300), myPoint(400, 300)));
-	pattA.addShape(new myCircle(350, 350, 50));
-	pattA.addShape(new myRectangle(myPoint(300, 300), myPoint(400, 400)));
+	pattA.addShape(new myTriangle(myPoint(350, 250), myPoint(300, 300), myPoint(400, 300)),"Roof");
+	pattA.addShape(new myCircle(350, 350, 50),"Occupant");
+	pattA.addShape(new myRectangle(myPoint(300, 300), myPoint(400, 400)),"Walls");
 	pattA.draw(pDC);
 	pattA.rotate(-30,2);
 	pattA.draw(pDC);
 	pattA.translate(myVector(50, 50));
 	pattA.draw(pDC);
+	pattA.deleteShape("Occupant");
 	pattA.scale(2);
 	pattA.draw(pDC);
 }

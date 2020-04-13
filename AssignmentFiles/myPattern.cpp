@@ -9,7 +9,7 @@ myPattern::myPattern(string name) : name(name) {
 	tail = nullptr;
 };
 
-void myPattern::addShape(myShape* newShape) {
+void myPattern::addShape(myShape* newShape, string label) {
 	if (!head) {
 		head = newShape;
 		tail = newShape;
@@ -17,10 +17,44 @@ void myPattern::addShape(myShape* newShape) {
 	}
 	else {
 		tail->nextShape = newShape;
+		newShape->prevShape = tail;
 		tail = newShape;
-		tail->prevShape = newShape;
 	}
+
+	newShape->label = label;
 };
+
+void myPattern::deleteShape(string label) {
+
+	bool flag = TRUE;
+	while (flag) {
+		string shapeLabel = cursor->label;
+
+		if (shapeLabel.compare(label) == 0) {
+			if (cursor == head) {
+				head = cursor->nextShape;
+				cursor->nextShape = nullptr;
+			}
+			else if (cursor == tail) {
+				tail = cursor->prevShape;
+				cursor->prevShape = nullptr;
+			}
+			else {
+				myShape* previous = cursor->prevShape;
+				myShape* subsequent = cursor->nextShape;
+				previous->nextShape = subsequent;
+				subsequent->prevShape = previous;
+			}
+
+			flag = FALSE;
+		}
+		else {
+			cursor = cursor->nextShape;
+		}
+	}
+
+	cursor = head;
+}
 
 void myPattern::draw(CDC* pDC) {
 	while (cursor) {
