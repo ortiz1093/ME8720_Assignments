@@ -9,3 +9,7 @@ myShape::myShape() {
 }
 
 myShape::~myShape() {}
+
+myPoint* myShape::getCentroid() {
+	return &centroid;
+}

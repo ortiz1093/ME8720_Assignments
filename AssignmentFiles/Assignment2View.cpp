@@ -94,8 +94,12 @@ void CAssignment2View::OnDraw(CDC* pDC)
 	pattA.deleteShape("Occupant");
 	pattA.scale(2);
 	pattA.draw(pDC);
-	pattA.getShape("Walls")->translate(myVector(-100, 100));
-	pattA.draw(pDC);
+	pattA.getShape("Walls")->getCentroid()->show(pDC);
+
+	myRectangle rectA(myPoint(500, 500), myPoint(600, 600));
+	rectA.draw(pDC);
+	rectA.getCentroid()->show(pDC);
+
 }
 ///////////////////////////////////////////////////////////////////////////////////
 

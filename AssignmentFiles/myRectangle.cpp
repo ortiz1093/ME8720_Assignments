@@ -22,8 +22,8 @@ myRectangle::myRectangle(const myPoint& upperLeft, const myPoint& lowerRight)
 }
 
 void myRectangle::calcCentroid() {
-	double centX = (ptA.x - ptB.x) / 2;
-	double centY = (ptA.y - ptB.y) / 2;
+	double centX = (ptA.x + ptC.x) / 2;
+	double centY = (ptA.y + ptC.y) / 2;
 
 	centroid = myPoint(centX, centY);
 }
